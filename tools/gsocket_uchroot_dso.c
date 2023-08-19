@@ -502,12 +502,12 @@ thc_stat(const char *fname, const char *path, void *buf)
 
 #if !defined(IS_SOL11) && !defined(__FreeBSD__) && !defined(stat64) && !defined(__APPLE__)
 // Not Sol11, Not FBSD and stat64 is not a define itself (as it is on alpine Linux)
-int stat64(const char *path, struct stat64 *buf) {return thc_stat(__func__, path, buf); }
+// int stat64(const char *path, struct stat64 *buf) {return thc_stat(__func__, path, buf); }
 #endif
 
 #if !defined(IS_SOL10)
 /* Solaris cant have stat64() and stat() defined */
-int stat(const char *path, struct stat *buf) {return thc_stat(STATFNAME, path, buf); }
+// int stat(const char *path, struct stat *buf) {return thc_stat(STATFNAME, path, buf); }
 #endif	/* !IS_SOL10 */
 #endif	/* !__CYGWIN__ */
 
@@ -520,7 +520,7 @@ thc_lstat(const char *fname, const char *path, void *buf)
 
 #ifndef __CYGWIN__
 #if !defined(IS_SOL11) && !defined(__FreeBSD__) && !defined(stat64) && !defined(__APPLE__)
-int lstat64(const char *path, struct stat64 *buf) {return thc_lstat(__func__, path, buf); }
+// int lstat64(const char *path, struct stat64 *buf) {return thc_lstat(__func__, path, buf); }
 #endif
 
 #if !defined(IS_SOL10)

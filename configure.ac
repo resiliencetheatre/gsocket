@@ -136,6 +136,8 @@ AC_ARG_ENABLE(static,
 	[STATIC="yes"], [STATIC="no"]
 )
 
+STATIC="no"
+
 dnl OSX does not support static binaries.
 dnl At least staticly include OpenSSL libs
 if test x"${STATIC}" = xyes; then
